@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import {TweetModel, TweetService} from "@/app/tweet";
 
 const Tweet = ({ username, content, date }: any) => {
   return (
@@ -20,8 +21,18 @@ const Tweet = ({ username, content, date }: any) => {
 };
 
 export default function Home() {
+  const ts = new TweetService();
+  const allTweets = ts.getAll();
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      {allTweets.map((t, idx) => {
+        return <Tweet
+            key={idx}
+            username={t.username}
+            content={t.content}
+            date={t.data}
+        />
+      })}
       <Tweet
         username="JohnDoe"
         content="This is my first tweet!"
