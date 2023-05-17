@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import './TwitterFeed.css';
+import AddTweet from './AddTweet';
 
 const Tweet = ({ username, content, date }: any) => {
   return (
@@ -23,6 +24,7 @@ const Tweet = ({ username, content, date }: any) => {
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <AddTweet />
       <div className="twitter-feed">
         <div className="col-span-1 bg-gray-200 p-4">
           <h2>Column 1</h2>
