@@ -2,11 +2,10 @@ import Image from 'next/image'
 import './TwitterFeed.css';
 import TwitterSidebar from './TwitterSidebar';
 import AddTweet from './AddTweet';
-import {TweetService} from "@/app/tweet-service";
+import {TweetService, ts} from "@/app/tweet-service";
 import Tweet from "@/app/tweet";
 
 export default function Home() {
-  const ts = new TweetService();
   const allTweets = ts.getAll();
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">

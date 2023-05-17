@@ -91,3 +91,4 @@ const generateSampleData = (): TweetModel[] => {
     return sampleData;
 };
 
+export const ts = new TweetService();
