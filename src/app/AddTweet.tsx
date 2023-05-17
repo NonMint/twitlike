@@ -1,6 +1,22 @@
-import React from 'react';
+'use client';
 
-const AddTweet = () => {
+import React, { useState } from 'react';
+import {TweetService, ts} from "@/app/tweet-service";
+
+
+const AddTweet = ({ add }) => {
+  const [tweetText, setTweetText] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    add(tweetText);
+    setTweetText('');
+  };
+
+  const handleChange = (event) => {
+    setTweetText(event.target.value);
+  };
+
   return (
     <div className="container mx-auto">
       <div className="max-w-lg mx-auto mt-4">
