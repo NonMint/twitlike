@@ -1,5 +1,3 @@
-import faker from 'faker';
-
 export interface TweetModel {
     username: string
     content: string
