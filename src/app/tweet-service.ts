@@ -10,8 +10,8 @@ export class TweetService {
         this.data = generateSampleData();
     }
 
-    public set(key: string, value: any): void {
-        this.data[key] = value;
+    public add(tweet: TweetModel) {
+        this.data.push(tweet);
     }
 
     public get(key: string): any {
