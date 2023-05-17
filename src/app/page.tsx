@@ -1,8 +1,37 @@
 import Image from 'next/image'
 
+const Tweet = ({ username: string, content, date }) => {
+  return (
+    <div className="bg-white rounded-lg shadow p-4 mb-4">
+      <div className="flex items-center mb-2">
+        <img
+          className="w-12 h-12 rounded-full mr-4"
+          src="https://placekitten.com/50/50"
+          alt="User Avatar"
+        />
+        <div>
+          <span className="font-bold">{username}</span>
+          <span className="text-gray-500 text-sm ml-1">{date}</span>
+        </div>
+      </div>
+      <p className="text-lg">{content}</p>
+    </div>
+  );
+};
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <Tweet
+        username="JohnDoe"
+        content="This is my first tweet!"
+        date="May 17, 2023"
+      />
+      <Tweet
+        username="JaneSmith"
+        content="Just had a great day at the park! #nature"
+        date="May 16, 2023"
+      />
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Get started by editing&nbsp;
