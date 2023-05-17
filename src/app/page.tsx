@@ -7,13 +7,12 @@ import AddTweet from './AddTweet';
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <AddTweet />
       <div className="twitter-feed">
         <div className="col-span-1 p-4">
           <TwitterSidebar />
         </div>
         <div className="col-span-1 p-4">
-          <h2>Column 2</h2>
+          <AddTweet />
           <Tweet
             username="JohnDoe"
             content="This is my first tweet!"
