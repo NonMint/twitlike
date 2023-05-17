@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-const Tweet = ({ username: string, content, date }) => {
+const Tweet = ({ username, content, date }: any) => {
   return (
     <div className="bg-white rounded-lg shadow p-4 mb-4">
       <div className="flex items-center mb-2">
